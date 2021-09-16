@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ubaya.informatika.adv160419007week4.R
 import id.ac.ubaya.informatika.adv160419007week4.model.Student
+import id.ac.ubaya.informatika.adv160419007week4.util.loadImage
 import kotlinx.android.synthetic.main.student_list_item.view.*
 
 class StudentListAdapter (val studentList:ArrayList<Student>) :RecyclerView.Adapter<StudentListAdapter.StudentViewHolder>(){
@@ -33,10 +34,11 @@ class StudentListAdapter (val studentList:ArrayList<Student>) :RecyclerView.Adap
         {
             txtID.text=studentList[position].id
             txtNameDetail.text=studentList[position].name
+            imageView.loadImage(studentList[position].photoUrl.toString(),holder.view.progressBar)
 
             //ke detail
             btnDetail.setOnClickListener {
-                val action = StudentListFragmentDirections.actionStudentDetail()
+                val action = StudentListFragmentDirections.actionStudentDetail(studentList[position].id.toString())//kirim data id
                 Navigation.findNavController(it).navigate(action)
             }
         }

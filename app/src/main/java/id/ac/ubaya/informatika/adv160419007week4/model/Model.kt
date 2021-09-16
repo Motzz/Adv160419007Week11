@@ -8,6 +8,7 @@ data class Student(
     val name:String?,
     @SerializedName("birth_of_date")
     val bod:String?,
+    @SerializedName("phone")
     val Phone:String?,
     @SerializedName("photo_url")
     val photoUrl:String?

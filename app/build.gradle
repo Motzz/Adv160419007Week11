@@ -49,4 +49,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.android.volley:volley:1.1.1'//nambah ini
     implementation 'com.google.code.gson:gson:2.8.6'//nambah ini
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }
