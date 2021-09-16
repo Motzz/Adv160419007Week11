@@ -25,10 +25,8 @@ class ListViewModel(application: Application):AndroidViewModel(application) {
     private var queue:RequestQueue?=null
 
     fun refresh() {
-
-        loadingErrorLD.value = false
         loadingLD.value = true
-
+        loadingErrorLD.value = false
         queue=Volley.newRequestQueue(getApplication())
         var url="http://adv.jitusolution.com/student.php"
         var stringRequest=StringRequest(Request.Method.GET,url,
@@ -38,8 +36,8 @@ class ListViewModel(application: Application):AndroidViewModel(application) {
                 val result=Gson().fromJson<List<Student>>(response,sType)
                 studentsLD.value=result
 
-                loadingLD.value=false
-                Log.d("showVolley",response.toString())
+               loadingLD.value=false
+                Log.d("berhasil",response.toString())
 
             },
             {
