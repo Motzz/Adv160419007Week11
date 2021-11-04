@@ -35,10 +35,6 @@ class StudentListAdapter (val studentList:ArrayList<Student>) :RecyclerView.Adap
 
         holder.view.student=studentList[position]
         holder.view.listener=this
-
-
-
-
 //        with(holder.view)
 //        {
 //            txtID.text=studentList[position].id
