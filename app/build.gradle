@@ -2,17 +2,18 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions' //nambah ini
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
     buildToolsVersion "30.0.3"
     apply plugin: "androidx.navigation.safeargs.kotlin"//nambah ini
 
     defaultConfig {
         applicationId "id.ac.ubaya.informatika.adv160419007week4"
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdkVersion 20
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -24,6 +25,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures{
+        dataBinding true //tambah ini data binding
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -50,5 +54,8 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'//nambah ini
     implementation 'com.google.code.gson:gson:2.8.6'//nambah ini
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.room:room-runtime:2.3.0'
+    implementation 'androidx.room:room-ktx:2.3.0'
+    kapt "androidx.room:room-compiler:2.3.0"
 
 }
