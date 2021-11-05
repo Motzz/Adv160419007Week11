@@ -29,6 +29,7 @@ fun ImageView.loadImage(url:String,progressBar:ProgressBar) {
         })
 
 }
+
 //week 7
 fun createNotificationChannel(context: Context, importance: Int, showBadge:Boolean, name: String, description: String) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
@@ -42,7 +43,15 @@ fun createNotificationChannel(context: Context, importance: Int, showBadge:Boole
     }
 }
 @BindingAdapter("android:imageUrl","android:progressBar")
-fun loadPhotoUrl(v:ImageView,url:String,pb:ProgressBar)
+fun loadPhotoUrl(v:ImageView,url:String?,pb:ProgressBar)
 {
-    v.loadImage(url,pb)
+    if(url!=null)
+    {
+        v.loadImage(url!!,pb)
+    }
+
+
 }
+
+
+
